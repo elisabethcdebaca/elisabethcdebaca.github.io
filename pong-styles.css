@@ -11,19 +11,26 @@ body {
 
 #game {
   margin: 10px;
-  border: 5px solid black;
+  border: 5px solid white;
   left: 0;
   position: absolute;
 }
 
 #left-paddle {
-  background-color: green;
+  background-color: orange;
   left: 10px;
   height: 25px;
 }
 
+
+#square-obj {
+  background-color: pink;
+  left: 25px;
+  height: 25px;
+}
+
 #right-paddle {
-  background-color: blue;
+  background-color: whitesmoke;
   right: 10px;
 }
 
@@ -84,8 +91,9 @@ body {
 .score {
   position: absolute;
   font-family: Arial, Helvetica, sans-serif;
-  top: 0;
-}
+  top: 0; 
+  color: rgb(240, 235, 235);
+} 
 
 #left-score {
   left: 10%;

@@ -5,6 +5,7 @@ STARTUP EVENTS - things that will run once when the game starts
 RUNNING PROCESSES - things that will run every frame 
 */
 
+console.log("Hello, World!")
 
 //Import Code From Other JS Modules
 //Sound functions and classes
@@ -18,7 +19,7 @@ import {
   playDeferredSounds
 } from "./pong-audio.js";
 //Defaults for game objects
-import { Game, Ball, Paddle } from "./pong-classes.js";
+import { Game, Ball, Paddle, Square } from "./pong-classes.js";
 //Game Events
 import {
   GameEvent,
@@ -42,6 +43,7 @@ import { clamp, scalerange, randomAdjust, boolToOnOff } from "./pong-util.js";
 //GAME OBJECTS///DON'T CHANGE THESE
 var updateInterval = 15; //game framerate
 var game = new Game();
+
 game.htmlElement = document.getElementById("game");
 var ball = new Ball();
 ball.htmlElement = document.getElementById("ball");
@@ -51,6 +53,11 @@ var paddleLeft = new Paddle();
 paddleLeft.controller = "player1";
 paddleLeft.htmlElement = document.getElementById("left-paddle");
 paddleArray.push(paddleLeft);
+var sqaure = new Square ();
+sqaure.htmlElement = document.getElementById("square-obj");
+sqaure.position = { x: 100, y: 100 };
+sqaure.size = { x: 25, y: 25 };
+
 //If the game is too hard, make your paddle bigger, but don't go too big!
 //paddleLeft.size.y = 150;
 var paddleRight = new Paddle();
@@ -116,6 +123,10 @@ var resetScoreAndBall = false; //reset score and ball state
 //HTML Elements
 game.htmlElement.style.height = game.size.y + "px";
 game.htmlElement.style.width = game.size.x + "px";
+
+game.htmlElement.style["background-image"] = "url('https://static.boredpanda.com/blog/wp-content/uploads/2019/09/aege-5d91ffcd80a62__700.jpg')";
+
+
 computerPlayer.htmlElement = document.getElementById("computer-control-state");
 computerPlayer.htmlElement.innerHTML =
   game.computerDifficulty[game.computerState];
@@ -131,7 +142,7 @@ var gameDebug = document.getElementById("debug"); //update debug text
 //gameDebug.innerHTML = "XXXX";
 
 //Score Display
-var leftScoreDisplay = document.getElementById("left-score");
+var leftScoreDisplay = document.getElementById("left-score"); 
 var rightScoreDisplay = document.getElementById("right-score");
 var leftScore = 0;
 var rightScore = 0;

@@ -70,3 +70,15 @@ export class Paddle {
     this.htmlElement = null; //element on HTML page
   }
 }
+
+export class Square {
+  constructor(
+    size,
+    position,
+    htmlElement
+  ) {
+    this.size = { x: 10, y: 75 }; //default paddle size
+    this.position = { x: 50, y: 50 }; //paddle position, (Y is top)
+    this.htmlElement = null; //element on HTML page
+  }
+}
