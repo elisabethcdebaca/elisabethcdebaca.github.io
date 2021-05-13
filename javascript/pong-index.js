@@ -6,6 +6,8 @@ RUNNING PROCESSES - things that will run every frame
 */
 
 console.log("Hello, World!")
+console.log("testing")
+
 
 //Import Code From Other JS Modules
 //Sound functions and classes
@@ -94,7 +96,7 @@ function gameProcess() {
     wallSound.play();
   }
   if (ballHitPaddle.state) {
-    paddleSound.play();
+    paddleSound.play("Cougar_Growls_For_Pong.mp3");
   }
   if (leftScoreHit.state) {
     scoreSound.play();
