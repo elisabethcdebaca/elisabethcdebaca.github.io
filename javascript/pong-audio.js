@@ -54,7 +54,3 @@ soundArray.push(scoreSound);
 
 
 
-export var adventureMusic = new soundFile("Eight_Bit_Village_Loop.mp3");
-soundArray.push(villageMusic);
-villageMusic.player.loop = true;
-villageMusic.player.volume.value = -16;
